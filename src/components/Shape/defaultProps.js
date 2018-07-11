@@ -1,3 +1,4 @@
+// defaultProps
 const defaultProps = {
 };
 

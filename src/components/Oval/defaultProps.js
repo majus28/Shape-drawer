@@ -1,3 +1,4 @@
+// default props
 const defaultProps = {
     fill: 'green'
 };

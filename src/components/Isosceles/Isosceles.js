@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg, {Polygon} from 'react-native-svg';
-
+// Isosceles component
 const IsoscelesTriangle = ({width, height, fill}) => (
     <Svg height={height} width={width}>
         <Polygon points={`${width / 2},${height} ${width},0 0,0`} fill={fill}/>

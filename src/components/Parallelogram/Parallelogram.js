@@ -1,7 +1,7 @@
 import React from 'react';
 import Canvas from 'react-native-canvas';
 import {Dimensions} from 'react-native';
-
+// Draw Parallelogram with canvas
 const handleCanvas = (canvas) => {
     let x = Dimensions.get('window').width;
 
@@ -30,7 +30,7 @@ const handleCanvas = (canvas) => {
         ctx.stroke();
     }
 };
-
+// Parallelogram component
 const Parallelogram = ({width, height, ...otherProps}) => {
     return (
         <Canvas ref={handleCanvas} width={width} height={height} otherProps={otherProps}/>

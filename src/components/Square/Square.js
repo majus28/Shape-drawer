@@ -1,9 +1,9 @@
 import React from 'react';
 import {Dimensions} from 'react-native';
 import Svg, {Rect} from 'react-native-svg';
-
+// get full width
 const fullWidth = Dimensions.get('window').width;
-
+// Square Component
 const Square = ({height, width, ...otherProps}) => {
     return (
         <Svg

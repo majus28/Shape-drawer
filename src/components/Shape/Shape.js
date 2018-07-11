@@ -3,17 +3,11 @@ import {View, Text} from 'native-base';
 import styles from './styles';
 import {Square, Circle, Polygen, Parallelogram, Oval, Isosceles} from '../../components';
 
-function test(canvas) {
-    if (canvas) {
-        canvas.props.handleCanvas(canvas);
-    }
-}
-
 const sidesShape = ['first', 'pentagon', 'hexagon', 'heptagon', 'octagon', 'equilateral triangle'];
-
+// check the shape and draw it return
 const Shape = ({shape, sizes}) => {
 
-    let shapes = <Text />;
+    let shapes = <Text/>;
     if (shape.toLowerCase() === 'circle') {
         shapes = <Circle radius={sizes.radius}/>;
     } else if (shape.toLowerCase() === 'square') {

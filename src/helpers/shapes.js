@@ -1,3 +1,4 @@
+//shapes with measurement data
 export const shapes = {
     'isosceles triangle': [
         'height', 'width'
@@ -37,13 +38,14 @@ export const shapes = {
     ]
 };
 
-
+//Get shape name and sizes from the query
 export const findShape = (query) => {
     let result = strBetween(query, 'draw an', 'with') || strBetween(query, 'draw a', 'with');
     let values = findValues(result, query);
     return [result, values];
 };
 
+//Get the shape sizes from the query
 export const findValues = (shape, query) => {
     let values = {};
     if (shapes.hasOwnProperty(shape)) {
@@ -56,7 +58,7 @@ export const findValues = (shape, query) => {
     return values;
 };
 
-
+//get string from given stat end string
 export const strBetween = (string, start, end) => {
     // create regular expression
     const regex = new RegExp(

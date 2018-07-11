@@ -1,13 +1,18 @@
 import React from 'react';
 import Canvas from 'react-native-canvas';
 import {Dimensions} from 'react-native';
+// set sides to shapes
 
 const lengthShapesSides = {
     'square': 4, 'hexagon': 6, 'heptagon': 7, 'octagon': 8, 'pentagon': 5, 'equilateral triangle': 3
 };
+
+// rotation angle for shapes
+
 const rotateAngleArray = {
     'square': 4, 'hexagon': 0, 'heptagon': 90, 'octagon': 20, 'pentagon': 60, 'equilateral triangle': 300
 };
+//draw shapes using canvas
 const handleCanvas = (canvas) => {
     let x = Dimensions.get('window').width;
 
@@ -40,7 +45,7 @@ const handleCanvas = (canvas) => {
         ctx.stroke();
     }
 };
-
+// get polygon point
 polygon = (ctx, x, y, radius, sides, rotateAngle) => {
     if (sides < 3) return;
     var a = (Math.PI * 2) / sides;
@@ -56,7 +61,7 @@ polygon = (ctx, x, y, radius, sides, rotateAngle) => {
 };
 
 
-
+// Polygen Component
 const Polygen = ({sideLength, shape}) => {
     return (
         <Canvas ref={handleCanvas} sideLength={sideLength} shape={shape}/>

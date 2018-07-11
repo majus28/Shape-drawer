@@ -1,3 +1,4 @@
+//Circle default props
 const defaultProps = {
     fill: '#4050b5'
 };

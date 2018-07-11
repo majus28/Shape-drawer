@@ -5,7 +5,7 @@ import Svg, {
 } from 'react-native-svg';
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
-
+// Oval component
 const Oval = ({width, height, ...otherProps}) => {
     return (
         <Svg
