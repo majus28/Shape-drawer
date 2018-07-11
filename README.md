@@ -29,3 +29,7 @@ Draw a shape with the dimensions of their choosing using a semi-natural language
 
 ## Snack ##
 Click [here](https://snack.expo.io/HJe3W7mXX) to view project in expo snack
+
+
+<div data-snack-id="HJe3W7mXX" data-snack-platform="ios" data-snack-preview="true" data-snack-theme="light" style="overflow:hidden;background:#fafafa;border:1px solid rgba(0,0,0,.08);border-radius:4px;height:505px;width:100%"></div>
+<script async src="https://snack.expo.io/embed.js"></script>
