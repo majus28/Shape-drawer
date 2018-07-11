@@ -6,23 +6,10 @@ import {Row, Grid} from "react-native-easy-grid";
 
 /** Main Class  */
 export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            query: "",
-            shape: '',
-            sizes: [],
-            values: [],
-            hasError: '',
-            error: ''
-        };
-    }
-
     /** Update the query value */
     handleQueryChange = (value) => {
         this.setState({query: value})
     };
-
     /** Get Shape Data and clear the state */
     handleOnSubmit = async () => {
         if (!this.state.query) {
@@ -35,7 +22,6 @@ export default class App extends React.Component {
         await this.clear();
         await this.getShape();
     };
-
     /** Clear old state */
     clear = () => {
         this.setState({
@@ -43,7 +29,6 @@ export default class App extends React.Component {
             sizes: [],
         });
     };
-
     /** Get and set the shape data to state */
     getShape = () => {
         let shape = findShape(this.state.query);
@@ -55,18 +40,34 @@ export default class App extends React.Component {
         }
 
         if (shape[0]) {
+            if (!this.validateSizes(shape[0], shape[1])) {
+                this.setState({
+                    hasError: 'error',
+                    error: shape[0] + ' is required measurements.'
+                });
+            } else {
+                this.setState({
+                    shape: shape[0],
+                    sizes: shape[1],
+                });
+            }
 
-            this.setState({
-                shape: shape[0],
-                sizes: shape[1],
-            });
         }
     };
-
     validateSizes = (shape, value) => {
+        let bool = false;
+        if (shapes[shape]) {
+            shapes[shape].forEach(function (k) {
+                if (!value[k]) {
+                    bool = false;
+                    return;
+                }
+                bool = true;
+            });
 
+        }
+        return bool;
     };
-
     /** Canvas visibility  */
     checkCanvas = () => {
         if (this.state.shape && typeof this.state.sizes === 'object') {
@@ -75,6 +76,17 @@ export default class App extends React.Component {
         return false;
     };
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            query: "",
+            shape: '',
+            sizes: [],
+            values: [],
+            hasError: '',
+            error: ''
+        };
+    }
 
     render() {
         return (
