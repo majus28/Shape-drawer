@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'native-base';
 import styles from './styles';
-import {Square, Circle, Polygen, Parallelogram, Oval, Isosceles} from '../../components';
+import {Square, Circle, Polygen, Parallelogram, Oval, Isosceles, ScaleneTriangle} from '../../components';
 
 const sidesShape = ['first', 'pentagon', 'hexagon', 'heptagon', 'octagon', 'equilateral triangle'];
 // check the shape and draw it return
@@ -20,6 +20,8 @@ const Shape = ({shape, sizes}) => {
         shapes = <Oval width={sizes.width} height={sizes.height}/>;
     } else if (shape.toLowerCase() === 'isosceles triangle') {
         shapes = <Isosceles width={sizes.width} height={sizes.height}/>;
+    } else if (shape.toLowerCase() === 'scalene triangle') {
+        shapes = <ScaleneTriangle width={sizes.width} height={sizes.height}/>;
     } else if (sidesShape.indexOf(shape)) {
         shapes = <Polygen sideLength={sizes.length} shape={shape}/>;
     }

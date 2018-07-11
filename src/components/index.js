@@ -6,3 +6,4 @@ export {default as Polygen} from './Polygen';
 export {default as Parallelogram} from './Parallelogram';
 export {default as Oval} from './Oval';
 export {default as Isosceles} from './Isosceles';
+export {default as ScaleneTriangle} from './ScaleneTriangle';
