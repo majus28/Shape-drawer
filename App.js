@@ -3,7 +3,7 @@ import {Form, Shape} from './src/components';
 import {Container, Text, Content, Header, Body, Button} from 'native-base';
 import {findShape, shapes} from './src/helpers/shapes';
 import {Row, Grid} from 'react-native-easy-grid';
-
+import { Keyboard } from 'react-native';
 /** Main Class  */
 export default class App extends React.Component {
     constructor(props) {
@@ -25,6 +25,7 @@ export default class App extends React.Component {
 
     /** Get Shape Data and clear the state */
     handleOnSubmit = async () => {
+         Keyboard.dismiss(); 
         if (!this.state.query) {
             this.setState({
                 hasError: 'error',
