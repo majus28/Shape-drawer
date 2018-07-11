@@ -55,11 +55,16 @@ export default class App extends React.Component {
         }
 
         if (shape[0]) {
+
             this.setState({
                 shape: shape[0],
                 sizes: shape[1],
             });
         }
+    };
+
+    validateSizes = (shape, value) => {
+
     };
 
     /** Canvas visibility  */
