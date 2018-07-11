@@ -28,4 +28,4 @@ Draw a shape with the dimensions of their choosing using a semi-natural language
 12. Draw a Oval with a width of 300 and a height of 150
 
 ## Snack ##
-Click [here](https://snack.expo.io/HJe3W7mXX) to view project in expo snack
+Click [here](https://snack.expo.io/@majushan/shape-drawer) to view project in expo snack
